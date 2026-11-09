@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Data Map Exercise: transform student CSV records into JSON." />
+    <title>Data Map Exercise | CSV to JSON</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Data Map Exercise home">CSV to JSON</a>
+        <div class="student-meta" aria-label="Student details">
+          <div><span>Full Name</span><strong>Alicia Kate Bactasa</strong></div>
+          <div><span>Schedule</span><strong>Integrative Programming 12:30 - 3 PM</strong></div>
+        </div>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <h1 id="page-title">CSV to JSON</h1>
+        <p>Upload a student CSV to transform it into JSON.</p>
+      </section>
+
+      <section class="workspace" aria-label="CSV upload and JSON output">
+        <div class="panel upload-panel">
+          <div class="panel-heading"><h2>Upload CSV</h2><span class="file-type">.CSV</span></div>
+
+          <label class="drop-zone" id="drop-zone" for="file-input">
+            <span class="upload-icon" aria-hidden="true">↑</span>
+            <span class="drop-title">Drop your file here</span>
+            <span class="drop-subtitle">or click to browse from your computer</span>
+            <span class="file-name" id="file-name">No file selected</span>
+          </label>
+          <input id="file-input" type="file" accept=".csv,text/csv" hidden />
+
+        </div>
+
+        <div class="panel output-panel">
+          <div class="panel-heading"><h2>JSON output</h2><span class="record-count" id="record-count">0 records</span></div>
+
+          <div class="output-toolbar">
+            <span id="status-message">Waiting for a CSV file</span>
+            <div class="toolbar-actions">
+              <button class="icon-button" id="copy-button" type="button" title="Copy JSON" aria-label="Copy JSON" disabled>⧉</button>
+              <button class="download-button" id="download-button" type="button" disabled><span aria-hidden="true">↓</span> Download JSON</button>
+            </div>
+          </div>
+          <pre class="json-output" id="json-output" aria-live="polite"><code>[
+  {
+    "studentId": 2026001,
+    "firstName": "Juan",
+    "lastName": "Dela Cruz",
+    "program": "Bachelor of Science in Information Technology",
+    "yearLevel": 3,
+    "emailAddress": "juan@example.com",
+    "outstandingBalance": 0
+  }
+]</code></pre>
+          <p class="empty-note" id="empty-note">Your transformed records will appear here after upload.</p>
+        </div>
+      </section>
+
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
